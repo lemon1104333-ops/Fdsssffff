@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ITAMI LOVE ～期待したかも笑～</title>
+<style>
+:root{--bg:#100d19;--panel:#21182e;--panel2:#2c203b;--pink:#ff83bd;--lav:#c8a5ff;--gold:#ffd479;--text:#fff7fc;--muted:#c8bbd0;--line:#594567;--green:#8de2c2;--red:#ff8c9d}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#382249 0,#100d19 48%,#09070e 100%);color:var(--text);font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;min-height:100vh}
+button,select{font:inherit}button{cursor:pointer;border:1px solid #755889;border-radius:14px;background:#382447;color:var(--text);padding:12px 15px;transition:.15s}button:hover{filter:brightness(1.15);transform:translateY(-1px)}button:focus-visible{outline:3px solid var(--gold)}button.primary{background:linear-gradient(135deg,#bd5e9b,#7954bb);border:0;font-weight:800}button.soft{background:#241a31}button:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.wrap{max-width:1100px;margin:auto;padding:20px}.top{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:16px}.logo{font-weight:950;letter-spacing:.04em;font-size:clamp(1.25rem,4vw,2rem)}.logo span{color:var(--pink)}.tag{font-size:.75rem;border:1px solid #7c5b8d;border-radius:99px;padding:5px 9px;color:var(--lav);white-space:nowrap}
+.layout{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(260px,.8fr);gap:16px}.panel{background:linear-gradient(160deg,#281d35ee,#17121fee);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 14px 45px #0003}.hero{padding:20px;background:linear-gradient(120deg,#462545,#1c1830);border-bottom:1px solid var(--line)}.chapter{font-size:.8rem;color:var(--gold);font-weight:800;letter-spacing:.08em}.hero h1{margin:6px 0 3px;font-size:clamp(1.5rem,4vw,2.2rem)}.hero p{margin:0;color:var(--muted)}.scene{padding:18px}.portrait{height:185px;border-radius:16px;background:linear-gradient(135deg,#f5b4d2,#7e5a9c 60%,#27213c);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;margin-bottom:14px}.portrait:before,.portrait:after{content:"";position:absolute;border-radius:50%;background:#fff2;filter:blur(1px)}.portrait:before{width:240px;height:240px;left:-60px;top:-130px}.portrait:after{width:170px;height:170px;right:-40px;bottom:-90px}.avatar{font-size:5.4rem;filter:drop-shadow(0 8px 10px #311a3b77);z-index:1}.portrait .label{position:absolute;bottom:10px;left:12px;background:#160f20b8;padding:6px 10px;border-radius:9px;font-size:.8rem;z-index:2}.name{font-size:1.1rem;color:var(--pink);font-weight:850;margin-bottom:8px}.dialogue{font-size:1.05rem;line-height:1.8;min-height:88px;white-space:pre-line}.thought{color:var(--lav);font-size:.92rem;border-left:3px solid var(--lav);padding:7px 10px;margin:12px 0 16px;background:#ffffff08}.choices{display:grid;gap:9px}.choices button{text-align:left;line-height:1.45;background:#2b2039}.choices button .n{display:inline-grid;place-items:center;width:25px;height:25px;border-radius:8px;background:#704779;margin-right:9px;font-size:.8rem}.side{padding:17px}.side h2{font-size:1rem;margin:0 0 13px}.meter{margin:14px 0}.meter-head{display:flex;justify-content:space-between;font-size:.88rem;margin-bottom:6px}.bar{height:10px;background:#100c16;border-radius:99px;overflow:hidden;border:1px solid #493454}.fill{height:100%;border-radius:99px;transition:width .25s}.love{background:linear-gradient(90deg,#e95b9e,#ffb1d2)}.expect{background:linear-gradient(90deg,#8057ce,#c9a4ff)}.confuse{background:linear-gradient(90deg,#d97a45,#ffd479)}.log{border-top:1px solid var(--line);margin-top:18px;padding-top:15px}.log ul{margin:0;padding-left:18px;color:var(--muted);font-size:.87rem;line-height:1.7}.bottom{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.footer{color:#a999b4;text-align:center;font-size:.78rem;margin:18px 0}.ending{padding:24px;text-align:center}.ending .big{font-size:4rem}.ending h2{font-size:1.7rem;color:var(--gold)}.ending p{line-height:1.8;color:var(--muted)}.hidden{display:none}.route-select{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.route-select button{flex:1;min-width:110px}.toast{font-size:.86rem;color:var(--green);min-height:1.4em;margin-top:8px}
+@media(max-width:760px){.wrap{padding:12px}.layout{grid-template-columns:1fr}.top{align-items:flex-start}.portrait{height:155px}.side{order:2}.scene{padding:14px}.hero{padding:16px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><div class="logo">ITAMI <span>LOVE</span> <small style="font-size:.48em;color:#c8bbd0">～期待したかも笑～</small></div><div class="tag">伊丹語録 恋愛ADV</div></header>
+  <main id="game">
+    <div class="layout">
+      <section class="panel">
+        <div class="hero"><div class="chapter" id="chapter">PROLOGUE</div><h1 id="sceneTitle">恋のフラグ、勝手に立てました。</h1><p id="sceneSub">選択肢で恋の行方が変わる。期待値だけ暴走させるな。</p></div>
+        <div class="scene">
+          <div class="portrait" id="portrait"><div class="avatar" id="avatar">🌸</div><div class="label" id="portraitLabel">放課後・校門前</div></div>
+          <div class="name" id="charName">まゆか</div>
+          <div class="dialogue" id="dialogue"></div>
+          <div class="thought" id="thought"></div>
+          <div class="choices" id="choices"></div>
+          <div class="toast" id="toast" aria-live="polite"></div>
+          <div class="bottom"><button class="soft" id="restartBtn">最初から</button><button class="soft" id="logBtn">語録帳</button><button class="soft" id="statusBtn">ステータス詳細</button></div>
+        </div>
+      </section>
+      <aside class="panel side">
+        <h2>💘 伊丹の恋愛パラメータ</h2>
+        <div class="meter"><div class="meter-head"><span>好感度</span><strong id="loveText">0</strong></div><div class="bar"><div class="fill love" id="loveBar" style="width:0%"></div></div></div>
+        <div class="meter"><div class="meter-head"><span>期待値</span><strong id="expectText">0</strong></div><div class="bar"><div class="fill expect" id="expectBar" style="width:0%"></div></div></div>
+        <div class="meter"><div class="meter-head"><span>困惑度</span><strong id="confuseText">0</strong></div><div class="bar"><div class="fill confuse" id="confuseBar" style="width:0%"></div></div></div>
+        <div class="log"><h2>📓 発動した伊丹語録</h2><ul id="quoteList"><li>まだ何も起きていない。</li></ul></div>
+        <div class="log"><h2>🗺️ 攻略ルート</h2><div class="route-select"><button data-route="mayuka">まゆか編</button><button data-route="yuika">ゆいか編</button><button data-route="eri">エリ編</button><button data-route="miyu">みゆ以外の新章</button></div></div>
+        <div class="log"><h2>🎯 エンディング条件（ヒント）</h2><ul><li>好感度が高いと恋愛ENDに近づく。</li><li>期待値だけ高いと脳内で完結する。</li><li>困惑度が高すぎると「ちょっとお待ちっ！笑」</li><li>語録を集めると秘密ENDが開くかも。</li></ul></div>
+      </aside>
+    </div>
+  </main>
+  <section id="ending" class="panel ending hidden"></section>
+  <div class="footer">ファンメイドのオリジナル恋愛ADV。セーブはこのページを閉じるとリセットされます。</div>
+</div>
+<script>
+const characters = {
+ mayuka:{name:"まゆか",emoji:"🌸",color:["#f7b4d0","#76508e"],scenes:[
+  {title:"放課後、通知ひとつ",place:"放課後・校門前",line:"まゆか「今日もお疲れ！ また話そうね笑」",thought:"伊丹の心の声：『また話そう』……これは、期待したかも笑",opts:[
+   ["「期待したかも笑」って送る",1,3,1,"期待したかも笑"],
+   ["「ありがと！まゆもお疲れ！」",2,0,0,""],
+   ["「まゆ僕のこと好きなのかなぁーって笑」",0,4,3,"まゆ僕のこと好きなのかなぁーって笑"]]},
+  {title:"距離感、迷子",place:"夜・LINE",line:"まゆか「伊丹ってほんと不思議だよね笑」",thought:"褒められた？ いじられた？ どっちでも脈あり判定しそう。",opts:[
+   ["「それはずるい！」",2,2,0,"それはずるい！"],
+   ["「ちょっと嫉妬した笑」",0,3,2,"ちょっと嫉妬した笑"],
+   ["「楽しかったら話してもいいんじゃない？」",2,1,0,"楽しかったら話してもいいんじゃない？"]]},
+  {title:"本音、出ちゃった",place:"帰り道・夕焼け",line:"まゆか「伊丹は、私といて楽しい？」",thought:"ここで誠実に答えるか、伊丹語録を解放するか。",opts:[
+   ["「好きだよ！」",3,1,0,"好きだよ！"],
+   ["「どのくらい好き？……うさぎ」",1,2,2,"どのくらい好き？→うさぎ"],
+   ["「まゆを愛しすぎてずっとずっと尽くすのさ」",2,3,1,"まゆを愛しすぎてずっとずっと尽くすのさ"]]},
+  {title:"最後の選択",place:"夜・駅前",line:"まゆか「これからも、私と一緒にいてくれる？」",thought:"最終局面。期待値ではなく、相手の気持ちを見るんだ、伊丹。",opts:[
+   ["「アイシテンヨ」",4,1,0,"アイシテンヨ"],
+   ["「週七でも」",2,3,1,"週七でも"],
+   ["「ユナイテッドザクザク！」",0,2,4,"ユナイテッドザクザク"]]}
+ ]},
+ yuika:{name:"ゆいか",emoji:"💐",color:["#b8d6ff","#6b66a6"],scenes:[
+  {title:"偶然の再会",place:"カフェ・午後",line:"ゆいか「え、伊丹くん？ 久しぶり！」",thought:"偶然の再会を運命と呼ぶまで、あと3秒。",opts:[
+   ["「天使だった。」",2,3,0,"天使だった。"],
+   ["「久しぶり！ 元気だった？」",2,0,0,""],
+   ["「今日、君のバイト先にいく」",0,4,4,"今日、君のバイト先にいく"]]},
+  {title:"ちょっとした相談",place:"カフェ・窓際",line:"ゆいか「最近ちょっと疲れちゃってさ」",thought:"ここは話を聞く場面。伊丹、語録より共感を優先できるか？",opts:[
+   ["「大丈夫？ 話聞くよ」",3,0,0,""],
+   ["「人間不信なりそう」",0,2,2,"人間不信なりそう"],
+   ["「ちょっとお待ちっ！笑」",1,1,2,"ちょっとお待ちっ！笑"]]},
+  {title:"帰り際のひと言",place:"駅の改札",line:"ゆいか「今日は一緒にいられて楽しかった！」",thought:"伊丹の脳内BGMが勝手にラスサビに入った。",opts:[
+   ["「それはずるい！」",2,2,0,"それはずるい！"],
+   ["「また今度遊ぼう！」",3,1,0,""],
+   ["「告白？？」",0,4,3,"告白？？"]]},
+  {title:"答え合わせ",place:"夜・メッセージ",line:"ゆいか「伊丹くんのこと、もっと知りたいな」",thought:"落ち着いて。ここで勝手に結婚式まで進めない。",opts:[
+   ["「俺ももっと話したい」",4,1,0,""],
+   ["「これは譲れない！」",1,3,1,"これは譲れない！"],
+   ["「一回したぁ！」",0,3,4,"一回したぁ！"]]}
+ ]},
+ eri:{name:"エリ",emoji:"🎀",color:["#ffd2a6","#d06f98"],scenes:[
+  {title:"テスト終わり",place:"学校・廊下",line:"エリ「テストお疲れさま！」",thought:"この一言を何年も反芻できる。それが伊丹。",opts:[
+   ["「テストお疲れさまえり好きだよー」",1,4,3,"テストお疲れさまえり好きだよー"],
+   ["「ありがと！ エリもお疲れ！」",2,0,0,""],
+   ["「告白？？」",0,4,2,"告白？？"]]},
+  {title:"既読の向こう",place:"夜・スマホ",line:"エリ「笑笑 また話そうね！」",thought:"「笑笑」の数に意味を見出すのはやめよう。たぶん。",opts:[
+   ["「おはよって思った」",1,3,1,"おはよって思った"],
+   ["「また話そう！」",3,1,0,""],
+   ["「困惑です」",0,1,3,"困惑です"]]},
+  {title:"まっすぐな質問",place:"帰り道",line:"エリ「伊丹って、私のことどう思ってるの？」",thought:"ここでふざけすぎるとエンディングが遠のく。",opts:[
+   ["「好きだよ！」",3,1,0,"好きだよ！"],
+   ["「僕一応男の子だからね？！」",1,2,2,"僕一応男の子だからね？！"],
+   ["「ちょっとむりかも、あいて重い（ビンビン）」",0,3,4,"ちょっとむりかも、あいて重い（ビンビン）"]]},
+  {title:"ラストメッセージ",place:"夜・駅前",line:"エリ「また会いたいって言ったら、困る？」",thought:"伊丹、最後くらいは相手の返事を待とう。",opts:[
+   ["「会いたい。次はいつ空いてる？」",4,1,0,""],
+   ["「これは譲れない！」",1,3,1,"これは譲れない！"],
+   ["「ユナイテッドザァクザクゥ！」",0,2,4,"ユナイテッドザクザク"]]}
+ ]},
+ miyu:{name:"あかり",emoji:"✨",color:["#c5f4df","#438c8a"],scenes:[
+  {title:"新章、開幕",place:"本屋・夕方",line:"あかり「その本、私も好き！」",thought:"伊丹次章。みゆは除外済み。名前はあかりで進行。",opts:[
+   ["「それはずるい！」",2,2,0,"それはずるい！"],
+   ["「どこが好き？ 聞きたい！」",3,0,0,""],
+   ["「期待したかも笑」",1,3,1,"期待したかも笑"]]},
+  {title:"好きなものの話",place:"本屋のカフェ",line:"あかり「伊丹くんと話すと時間すぐ過ぎるね」",thought:"これはいい雰囲気。でもまだ脈あり確定ではない。",opts:[
+   ["「俺も楽しい。また話そう」",3,1,0,""],
+   ["「取られたくない！」",0,3,3,"取られたくない！"],
+   ["「一生ネットの宝物」",1,2,1,"一生ネットの宝物"]]},
+  {title:"気持ちを伝える",place:"帰り道・夕焼け",line:"あかり「私、伊丹くんのこともっと知りたい」",thought:"ここで相手の言葉を受け止めることができるか。",opts:[
+   ["「俺も。今度デートしない？」",4,1,0,""],
+   ["「週七でも」",2,3,1,"週七でも"],
+   ["「困惑です」",0,0,3,"困惑です"]]},
+  {title:"エピローグ",place:"公園・夜",line:"あかり「これからも一緒にいようね」",thought:"恋愛も人生も、最後は相手の気持ちをちゃんと聞くこと。",opts:[
+   ["「うん、これからもよろしく」",4,0,0,""],
+   ["「ユナイテッドザクザク！」",0,2,4,"ユナイテッドザクザク"],
+   ["「アイシテンヨ」",3,1,0,"アイシテンヨ"]]}
+ ]}
+};
+let route="mayuka", idx=0, stats={love:0,expect:0,confuse:0}, quotes=[], routeChoices=[], lastChoice=null;
+const $=id=>document.getElementById(id);
+function clamp(n){return Math.max(0,Math.min(100,n))}
+function updateStats(){
+ $("loveText").textContent=stats.love;$("expectText").textContent=stats.expect;$("confuseText").textContent=stats.confuse;
+ $("loveBar").style.width=clamp(stats.love)+"%";$("expectBar").style.width=clamp(stats.expect)+"%";$("confuseBar").style.width=clamp(stats.confuse)+"%";
+ $("quoteList").innerHTML=quotes.length?quotes.slice(-8).map(q=>`<li>${esc(q)}</li>`).join(""):"<li>まだ何も起きていない。</li>";
+}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function render(){
+ const ch=characters[route], s=ch.scenes[idx];
+ $("chapter").textContent=`${ch.name.toUpperCase()} ROUTE  •  DAY ${idx+1}/4`;
+ $("sceneTitle").textContent=s.title;$("sceneSub").textContent="選択肢で好感度・期待値・困惑度が変わる。";
+ $("avatar").textContent=ch.emoji;$("charName").textContent=ch.name;$("dialogue").textContent=s.line;$("thought").textContent=s.thought;$("portraitLabel").textContent=s.place;
+ $("portrait").style.background=`linear-gradient(135deg,${ch.color[0]},${ch.color[1]} 65%,#27213c)`;
+ $("choices").innerHTML="";
+ s.opts.forEach((o,i)=>{const b=document.createElement("button");b.innerHTML=`<span class="n">${i+1}</span>${esc(o[0])}`;b.onclick=()=>choose(i);$("choices").appendChild(b)});
+ $("toast").textContent="";updateStats();
+}
+function choose(i){
+ const ch=characters[route], s=ch.scenes[idx], o=s.opts[i];lastChoice=o[0];
+ stats.love=clamp(stats.love+o[1]*7);stats.expect=clamp(stats.expect+o[2]*7);stats.confuse=clamp(stats.confuse+o[3]*8);
+ if(o[4]&&!quotes.includes(o[4]))quotes.push(o[4]);
+ routeChoices.push({route,idx,choice:o[0]});updateStats();
+ if(stats.confuse>=72){endGame("confuse");return}
+ if(idx<ch.scenes.length-1){idx++;render();$("toast").textContent=`選択：「${o[0]}」　${o[4]?"伊丹語録を記録！":"誠実さポイントが動いた！"}`;return}
+ finish(o);
+}
+function finish(o){
+ const ch=characters[route];
+ let kind,title,desc,emoji;
+ if(stats.love>=70&&stats.confuse<45){kind="true";title="TRUE END：アイシテンヨ";desc=`${ch.name}「伊丹、ちゃんと気持ちを伝えてくれてありがとう。これからも一緒にいようね。」\n伊丹はついに、期待するだけでなく自分の言葉で気持ちを伝えた。`;emoji="💖"}
+ else if(stats.confuse>=45){kind="confuse";title="BAD END：困惑です。";desc=`${ch.name}「伊丹、ちょっと情報量が多いかも……笑」\n伊丹は恋愛の可能性を見出したが、相手の困惑度が限界に達した。`;emoji="😵"}
+ else if(stats.expect>=65&&stats.love<55){kind="delusion";title="BAD END：脳内交際";desc=`${ch.name}「え、そんなつもりじゃ……」\n伊丹の期待値は天井知らず。しかし好感度は追いつかなかった。`;emoji="🫠"}
+ else if(quotes.includes("ユナイテッドザクザク")){kind="secret";title="SECRET END：ユナイテッドザクザク";desc="恋愛ADVのはずが、謎の力が世界を包み込んだ。伊丹は満足そうに頷いた。なお恋は進展していない。";emoji="🌪️"}
+ else {kind="normal";title="NORMAL END：また話そうね";desc=`${ch.name}「今日は楽しかった！ また話そうね。」\n伊丹は焦らず、少しずつ関係を育てることにした。`;emoji="🌷"}
+ showEnding(title,desc,emoji,kind);
+}
+function endGame(){showEnding("BAD END：ちょっとお待ちっ！笑","困惑度が限界を突破！\n相手はそっとスマホを伏せた。伊丹は「人間不信なりそう」と呟いた。","💥","confuse")}
+function showEnding(title,desc,emoji,kind){
+ $("game").classList.add("hidden");const e=$("ending");e.classList.remove("hidden");
+ e.innerHTML=`<div class="big">${emoji}</div><div class="chapter">ROUTE COMPLETE</div><h2>${esc(title)}</h2><p>${esc(desc).replace(/\n/g,"<br>")}</p><div style="max-width:500px;margin:18px auto;text-align:left;background:#17111f;padding:16px;border-radius:14px"><strong>最終ステータス</strong><p>好感度：${stats.love}　期待値：${stats.expect}　困惑度：${stats.confuse}</p><strong>獲得語録</strong><p>${quotes.length?quotes.map(esc).join(" / "):"今回は語録なし。誠実な伊丹でした。"}</p></div><button class="primary" onclick="resetGame(true)">別ルートを攻略する</button> <button onclick="resetGame(false)">同じルートを最初から</button>`;
+}
+function resetGame(chooseRoute){idx=0;stats={love:0,expect:0,confuse:0};quotes=[];routeChoices=[];lastChoice=null;$("game").classList.remove("hidden");$("ending").classList.add("hidden");if(chooseRoute){route="mayuka"}render()}
+function setRoute(r){route=r;resetGame(false);$("toast").textContent=`${characters[route].name}ルートを開始！`}
+$("restartBtn").onclick=()=>resetGame(false);
+$("logBtn").onclick=()=>alert("【伊丹語録帳】\n\n"+(quotes.length?quotes.join("\n"):"まだ語録は記録されていません。")+"\n\n目標：全ルートで語録を集めよう！");
+$("statusBtn").onclick=()=>alert(`【現在のステータス】\n好感度：${stats.love}/100\n期待値：${stats.expect}/100\n困惑度：${stats.confuse}/100\n獲得語録：${quotes.length}個\n\n期待値だけ上げすぎると、脳内交際エンドに注意。`);
+document.querySelectorAll("[data-route]").forEach(b=>b.onclick=()=>setRoute(b.dataset.route));
+render();
+</script>
+</body></html>
